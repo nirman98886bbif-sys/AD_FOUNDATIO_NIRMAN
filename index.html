@@ -1,309 +1,536 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AD Foundation - Free Education, Brighter Tomorrow</title>
+    <title>AD Foundation - Free Education for Brighter Tomorrow</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1A237E;
-            --secondary: #E91E63;
-            --accent: #FF9800;
-            --bg-light: #F4F6F9;
-            --text-dark: #333333;
+            --primary-color: #1a237e;
+            --secondary-color: #d81b60;
+            --accent-color: #ffb300;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            color: var(--dark-text);
+            background-color: #fff;
             line-height: 1.6;
         }
 
+        /* Header / Navbar */
         header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 10px 20px;
         }
 
-        .logo-img {
-            height: 70px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 65px;
             object-fit: contain;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
+        .logo-text h1 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.2;
         }
 
-        nav a {
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--dark-text);
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--secondary);
+        .nav-links a:hover {
+            color: var(--secondary-color);
         }
 
+        .btn-donate {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .btn-donate:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary), #3F51B5);
+            background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(216, 27, 96, 0.8)), url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
-        .hero h1 {
+        .hero h2 {
             font-size: 2.8rem;
             margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
         }
 
-        .tagline {
-            background: var(--secondary);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .container {
+        .btn-main {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 70px 20px;
             max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 40px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            display: block;
-            margin: 10px auto 0;
-            border-radius: 2px;
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* About & Founder */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
         .founder-card {
-            background: white;
+            background: var(--light-bg);
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 30px;
-            padding: 30px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 2px solid #eef2f5;
         }
 
         .founder-img {
-            width: 300px;
-            height: 350px;
-            object-fit: cover;
+            width: 100%;
+            max-width: 280px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .founder-info {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .founder-info h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .founder-info .role {
-            color: var(--secondary);
-            font-weight: bold;
             margin-bottom: 15px;
-            display: block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        .courses-grid {
+        .founder-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+
+        .founder-card p.title {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Classes Cards Grid */
+        .classes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
 
-        .course-card {
+        .class-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s;
+            border: 1px solid #eee;
         }
 
-        .course-card:hover {
+        .class-card:hover {
             transform: translateY(-5px);
         }
 
-        .course-img {
+        .class-img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
         }
 
-        .course-content {
+        .class-content {
             padding: 20px;
         }
 
-        .course-badge {
-            background: #E8F5E9;
-            color: #2E7D32;
+        .class-badge {
+            background-color: #e8eaf6;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 15px;
             font-size: 0.8rem;
-            font-weight: bold;
-            padding: 4px 10px;
-            border-radius: 4px;
-            text-transform: uppercase;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
-        .course-title {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin: 10px 0;
+        .class-content h3 {
+            color: var(--dark-text);
+            margin-bottom: 10px;
         }
 
+        .class-content p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Contact & Location */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-info {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-top: 3px;
+        }
+
+        .location-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .location-btn:hover {
+            background-color: #0d1344;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* Footer */
         footer {
-            background: var(--primary);
+            background-color: #0f1438;
             color: white;
             text-align: center;
             padding: 25px 20px;
-            margin-top: 60px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
-        <div class="nav-container">
-            <img src="logo.png" alt="AD Foundation Logo" class="logo-img">
-            <nav>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#founder">Founder</a></li>
-                    <li><a href="#courses">Free Courses</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="logo.png" alt="AD Foundation Logo">
+                <div class="logo-text">
+                    <h1>AD FOUNDATION</h1>
+                    <p>FREE EDUCATION, BRIGHTER TOMORROW</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#classes">Our Classes</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <a href="https://wa.me/919999999999?text=Hello%20AD%20Foundation,%20I%20want%20to%20support/join%20free%20education." target="_blank" class="btn-donate">Join / Support Us</a>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>AD FOUNDATION</h1>
-        <p>Educate • Empower • Elevate</p>
-        <span class="tagline">FREE EDUCATION, BRIGHTER TOMORROW</span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Educate • Empower • Elevate</h2>
+        <p>Providing 100% Free Quality Education & Skill Development for Every Student. Shaping a brighter future together.</p>
+        <div class="hero-btns">
+            <a href="#classes" class="btn-main"><i class="fa-solid fa-graduation-cap"></i> Explore Free Classes</a>
+            <a href="https://wa.me/919999999999?text=Hi,%20I%20want%20to%20know%20more%20about%20AD%20Foundation%20Classes" target="_blank" class="btn-main" style="background:#25d366; color:white;"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        </div>
     </section>
 
-    <section id="founder" class="container">
-        <h2 class="section-title">Meet Our Founder</h2>
-        <div class="founder-card">
-            <img src="founder.png" alt="Rakhi Luthra - Founder" class="founder-img">
-            <div class="founder-info">
-                <h3>Rakhi Luthra</h3>
-                <span class="role">Founder, AD Foundation</span>
-                <p>Aapke maargdarshan aur prayaas dwara AD Foundation har bachhe ko muft aur gunvattapoorn shiksha dene ke liye samarpit hai. Humara lakshya har student ko unke sapne poore karne aur ek behtar bhavishya banane me madad karna hai.</p>
+    <!-- About Section & Founder -->
+    <section class="section" id="about">
+        <h2 class="section-title">About AD Foundation</h2>
+        <p class="section-subtitle">Dedicated to bringing free education & technical skills to underprivileged youth.</p>
+        
+        <div class="about-grid">
+            <div>
+                <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.8rem;">Our Mission</h3>
+                <p style="margin-bottom: 15px;">At <strong>AD Foundation</strong>, we believe that education is a fundamental right, not a privilege. Our goal is to empower young minds with knowledge, practical skills, and confidence to succeed in today’s modern world.</p>
+                <p style="margin-bottom: 15px;">We offer completely <strong>Free Classes</strong> ranging from core academic subjects like English, Mathematics, and Science to modern high-tech fields like Artificial Intelligence (AI), Graphic Design, and Computer Basics.</p>
+            </div>
+            <div class="founder-card">
+                <img src="founder.png" alt="AD Foundation Founder" class="founder-img">
+                <h3>Our Leadership & Founders</h3>
+                <p class="title">Visionaries Behind AD Foundation</p>
+                <p style="font-size: 0.9rem; color: #555;">Leading with passion to bridge the educational gap and nurture the next generation of leaders through accessible learning.</p>
             </div>
         </div>
     </section>
 
-    <section id="courses" class="container">
+    <!-- Classes Section -->
+    <section class="section" id="classes" style="background-color: #fafbfc; max-width: 100%; padding: 70px 10%;">
         <h2 class="section-title">Our Free Classes</h2>
-        <div class="courses-grid">
-            
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="English Class" class="course-img">
-                <div class="course-content">
-                    <span class="course-badge">Free Course</span>
-                    <h3 class="course-title">English Class</h3>
-                    <p>Basic to advanced Spoken English, Grammar, aur Communication skills sikhaye jaate hain.</p>
+        <p class="section-subtitle">Comprehensive training programs designed for foundational learning & technical mastery.</p>
+
+        <div class="classes-grid">
+            <!-- 1. English Class -->
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="English Class" class="class-img">
+                <div class="class-content">
+                    <span class="class-badge">Academic & Spoken</span>
+                    <h3>English Language Class</h3>
+                    <p>Master Spoken English, grammar, vocabulary, and communication skills to gain confidence in academic and professional environments.</p>
                 </div>
             </div>
 
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80" alt="Math Class" class="course-img">
-                <div class="course-content">
-                    <span class="course-badge">Free Course</span>
-                    <h3 class="course-title">Math Class</h3>
-                    <p>Ganit ke basic concepts aur problem solving techniques ko aasan tarike se samjhaya jata hai.</p>
+            <!-- 2. Math Class -->
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80" alt="Math Class" class="class-img">
+                <div class="class-content">
+                    <span class="class-badge">Core Subject</span>
+                    <h3>Mathematics Class</h3>
+                    <p>Building strong logical and analytical foundations with easy-to-understand math concepts, problem-solving, and tricks.</p>
                 </div>
             </div>
 
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Science Class" class="course-img">
-                <div class="course-content">
-                    <span class="course-badge">Free Course</span>
-                    <h3 class="course-title">Science Class</h3>
-                    <p>Physics, Chemistry, aur Biology ke interactive lessons aur practical learning concepts.</p>
+            <!-- 3. Science Class -->
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Science Class" class="class-img">
+                <div class="class-content">
+                    <span class="class-badge">Practical Learning</span>
+                    <h3>Science & Tech Class</h3>
+                    <p>Exploring Physics, Chemistry, and Biology through interactive experiments, practical demonstrations, and real-world applications.</p>
                 </div>
             </div>
 
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80" alt="AI Class" class="course-img">
-                <div class="course-content">
-                    <span class="course-badge">Free Course</span>
-                    <h3 class="course-title">AI Class</h3>
-                    <p>Artificial Intelligence ke basics, tools, aur bhavishya me iske upyog ki interactive shiksha.</p>
+            <!-- 4. AI Class -->
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80" alt="AI Class" class="class-img">
+                <div class="class-content">
+                    <span class="class-badge">Future Tech</span>
+                    <h3>Artificial Intelligence (AI)</h3>
+                    <p>Learn the basics of AI, Machine Learning tools, prompt engineering, and modern smart tools to stay ahead in the digital era.</p>
                 </div>
             </div>
 
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Design Class" class="course-img">
-                <div class="course-content">
-                    <span class="course-badge">Free Course</span>
-                    <h3 class="course-title">Graphic Design</h3>
-                    <p>Creative designs, editing tools, Canva, Photoshop aur digital art sikhne ka mauka.</p>
+            <!-- 5. Graphic Design Class -->
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Design Class" class="class-img">
+                <div class="class-content">
+                    <span class="class-badge">Creative Skills</span>
+                    <h3>Graphic Design Class</h3>
+                    <p>Unlock creativity with Photoshop, Canva, Illustrator, and UI/UX design fundamentals for lucrative freelancing opportunities.</p>
                 </div>
             </div>
 
-            <div class="course-card">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Computer Class" class="course-img">
-                <div class="course-content">
-                    <span class="course-badge">Free Course</span>
-                    <h3 class="course-title">Computer Class</h3>
-                    <p>Basic Computer fundamentals, MS Office, Internet skills aur typing ki practical training.</p>
+            <!-- 6. Computer Class -->
+            <div class="class-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Computer Class" class="class-img">
+                <div class="class-content">
+                    <span class="class-badge">Essential Digital Literacy</span>
+                    <h3>Computer Basics & IT</h3>
+                    <p>Hands-on training in MS Office, Internet usage, coding foundations, typing skills, and daily computer operations.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <footer id="contact">
-        <p>&copy; 2026 AD Foundation. All Rights Reserved.</p>
-        <p>Empowering Students through Free Education</p>
+    <!-- Contact & Location Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact & Location</h2>
+        <p class="section-subtitle">Reach out to us or visit our teaching center directly.</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Phone Number</h4>
+                        <p><strong>+91 99999 99999</strong> / <strong>+91 88888 88888</strong></p>
+                        <p style="font-size: 0.85rem; color: #777;">(Replace with your exact phone number in index.html)</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+                    <div>
+                        <h4>WhatsApp Support</h4>
+                        <p>Click below to directly chat with us on WhatsApp for admission or inquiries.</p>
+                        <a href="https://wa.me/919999999999?text=Hello%20AD%20Foundation,%20I%20have%20a%20query" target="_blank" class="location-btn" style="background-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Our Location Center</h4>
+                        <p>AD Foundation Educational Center, Main Market Road, New Delhi, India</p>
+                        <!-- Google Maps Navigation Link -->
+                        <a href="https://www.google.com/maps/search/?api=1&query=AD+Foundation+Free+Education+Center" target="_blank" class="location-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Tap to Open Map Navigation
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div style="border-radius: 12px; overflow: hidden; height: 100%; min-height: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562013824131!2d77.2167213!3d28.6139391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9eb4d0b%3A0x717971125923e5d!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919999999999?text=Hello%20AD%20Foundation,%20I%20want%20information%20about%20free%20classes." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AD Foundation. All Rights Reserved. | Educate • Empower • Elevate</p>
+        <p style="margin-top: 5px; font-size: 0.8rem; opacity: 0.6;">Designed for Free Education Mission</p>
     </footer>
 
 </body>
