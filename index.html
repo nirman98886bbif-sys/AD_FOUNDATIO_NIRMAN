@@ -3,267 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AD Foundation - Free Education for All</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>AD Foundation - Free Education, Brighter Tomorrow</title>
+    <style>
+        :root {
+            --primary: #1A237E;
+            --secondary: #E91E63;
+            --accent: #FF9800;
+            --bg-light: #F4F6F9;
+            --text-dark: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-img {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #3F51B5);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            background: var(--secondary);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .founder-img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .founder-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .founder-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .founder-info .role {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-badge {
+            background: #E8F5E9;
+            color: #2E7D32;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 60px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="logo-container">
-            <img src="images/logo.png" alt="AD Foundation Logo" class="site-logo">
-            <div class="brand-name">
-                <h2>AD FOUNDATION</h2>
-                <span>Educate • Empower • Elevate</span>
-            </div>
+    <header>
+        <div class="nav-container">
+            <img src="logo.png" alt="AD Foundation Logo" class="logo-img">
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#founder">Founder</a></li>
+                    <li><a href="#courses">Free Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#courses">Free Classes</a>
-            <a href="#founder">Founder</a>
-            <a href="#contact">Contact</a>
-            <button class="join-header-btn" onclick="openModal()">Join Now</button>
-        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <span class="badge">100% Free NGO Education</span>
-            <h1>Har Bachhe Ka Haq: <span>Muft Aur Behtar Shiksha</span></h1>
-            <p>AD Foundation ke saath judein aur apni pasandida classes bilkul free mein seekhein. English, Math, Science, AI, Computer aur Graphic Design ke free courses!</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="openModal()"><i class="fas fa-user-plus"></i> Join Now (Registration)</button>
-                <a href="https://wa.me/919876543210?text=Hello%20AD%20Foundation,%20mujhe%20free%20classes%20ke%20bare%20mein%20jaankari%20chahiye." target="_blank" class="btn btn-whatsapp-hero"><i class="fab fa-whatsapp"></i> WhatsApp Direct Chat</a>
-            </div>
-        </div>
-        <div class="hero-badge-card">
-            <img src="images/logo.png" alt="AD Foundation" class="hero-center-logo">
-        </div>
+    <section class="hero">
+        <h1>AD FOUNDATION</h1>
+        <p>Educate • Empower • Elevate</p>
+        <span class="tagline">FREE EDUCATION, BRIGHTER TOMORROW</span>
     </section>
 
-    <!-- Stats Counter Bar -->
-    <section class="stats-bar">
-        <div class="stat-item">
-            <i class="fas fa-user-graduate"></i>
-            <h3>1000+</h3>
-            <p>Students Educated</p>
-        </div>
-        <div class="stat-item">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <h3>6+</h3>
-            <p>Free Skill Courses</p>
-        </div>
-        <div class="stat-item">
-            <i class="fas fa-certificate"></i>
-            <h3>100%</h3>
-            <p>Free Certification</p>
-        </div>
-        <div class="stat-item">
-            <i class="fas fa-heart"></i>
-            <h3>Non-Profit</h3>
-            <p>Social Initiative</p>
-        </div>
-    </section>
-
-    <!-- Founder Section -->
-    <section id="founder" class="founder-section">
-        <div class="container">
-            <h2 class="section-title">Meet Our Founder</h2>
-            <div class="founder-card">
-                <div class="founder-img-box">
-                    <img src="images/founder.png" alt="Rakhi Luthra - Founder">
-                </div>
-                <div class="founder-info">
-                    <span class="founder-tag">Visionary & Founder</span>
-                    <h2>Rakhi Luthra</h2>
-                    <p class="founder-quote">"Shiksha har bachhe aur yuva ka buniyadi haq hai. AD Foundation ka maqsad har zarooratmand tak modern aur digital skills muft mein pahunchana hai."</p>
-                    <p class="founder-bio">Rakhi Luthra ji ke netritva mein AD Foundation samaj ke har varg ko muft aur uchha star ki shiksha pradan kar raha hai. Unka sapna hai ki har student English, AI, Computer aur Graphic Design jaise modern subjects ko seekh kar aatmanirbhar bane.</p>
-                    <button class="btn btn-primary" onclick="openModal()"><i class="fas fa-graduation-cap"></i> Join Rakhi Luthra's Mission</button>
-                </div>
+    <section id="founder" class="container">
+        <h2 class="section-title">Meet Our Founder</h2>
+        <div class="founder-card">
+            <img src="founder.png" alt="Rakhi Luthra - Founder" class="founder-img">
+            <div class="founder-info">
+                <h3>Rakhi Luthra</h3>
+                <span class="role">Founder, AD Foundation</span>
+                <p>Aapke maargdarshan aur prayaas dwara AD Foundation har bachhe ko muft aur gunvattapoorn shiksha dene ke liye samarpit hai. Humara lakshya har student ko unke sapne poore karne aur ek behtar bhavishya banane me madad karna hai.</p>
             </div>
         </div>
     </section>
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section">
-        <div class="container">
-            <h2 class="section-title">Hamari Free Classes (Courses Offered)</h2>
-            <p class="section-subtitle">Aap in sabhi courses ko bilkul muft mein join kar sakte hain</p>
+    <section id="courses" class="container">
+        <h2 class="section-title">Our Free Classes</h2>
+        <div class="courses-grid">
             
-            <div class="courses-grid">
-                <!-- English Class -->
-                <div class="course-card">
-                    <div class="course-img">
-                        <img src="images/english.svg" alt="English Class">
-                        <span class="free-badge">FREE</span>
-                    </div>
-                    <div class="course-body">
-                        <h3>English Class</h3>
-                        <p>Spoken English, Grammar, Vocabulary aur Confidence Building bilkul aasan tarike se seekhein.</p>
-                        <button class="btn btn-outline" onclick="openModalWithCourse('English Class')">Join English Class</button>
-                    </div>
-                </div>
-
-                <!-- Math Class -->
-                <div class="course-card">
-                    <div class="course-img">
-                        <img src="images/math.svg" alt="Math Class">
-                        <span class="free-badge">FREE</span>
-                    </div>
-                    <div class="course-body">
-                        <h3>Mathematics Class</h3>
-                        <p>Maths ke mushkil formulas aur problem solving ko aasan aur fun tricks ke saath samjhein.</p>
-                        <button class="btn btn-outline" onclick="openModalWithCourse('Math Class')">Join Math Class</button>
-                    </div>
-                </div>
-
-                <!-- Science Class -->
-                <div class="course-card">
-                    <div class="course-img">
-                        <img src="images/science.svg" alt="Science Class">
-                        <span class="free-badge">FREE</span>
-                    </div>
-                    <div class="course-body">
-                        <h3>Science Class</h3>
-                        <p>Physics, Chemistry aur Biology ke basic concepts ko practical aur visual examples ke saath seekhein.</p>
-                        <button class="btn btn-outline" onclick="openModalWithCourse('Science Class')">Join Science Class</button>
-                    </div>
-                </div>
-
-                <!-- AI Class -->
-                <div class="course-card">
-                    <div class="course-img">
-                        <img src="images/ai.svg" alt="AI Class">
-                        <span class="free-badge">FREE</span>
-                    </div>
-                    <div class="course-body">
-                        <h3>Artificial Intelligence (AI) Class</h3>
-                        <p>Future ready banein! AI Tools, ChatGPT, Prompting aur Automation ka sahi istemal seekhein.</p>
-                        <button class="btn btn-outline" onclick="openModalWithCourse('AI Class')">Join AI Class</button>
-                    </div>
-                </div>
-
-                <!-- Graphic Design Class -->
-                <div class="course-card">
-                    <div class="course-img">
-                        <img src="images/graphic.svg" alt="Graphic Design Class">
-                        <span class="free-badge">FREE</span>
-                    </div>
-                    <div class="course-body">
-                        <h3>Graphic Design Class</h3>
-                        <p>Canva aur Photo Editing seekhein. Social Media Posters, Logos aur Banners banana seekhein.</p>
-                        <button class="btn btn-outline" onclick="openModalWithCourse('Graphic Design Class')">Join Graphic Class</button>
-                    </div>
-                </div>
-
-                <!-- Computer Class -->
-                <div class="course-card">
-                    <div class="course-img">
-                        <img src="images/computer.svg" alt="Computer Class">
-                        <span class="free-badge">FREE</span>
-                    </div>
-                    <div class="course-body">
-                        <h3>Basic Computer Class</h3>
-                        <p>Computer Fundamentals, MS Office (Word, Excel, PPT), Internet aur Typing Speed badhayein.</p>
-                        <button class="btn btn-outline" onclick="openModalWithCourse('Computer Class')">Join Computer Class</button>
-                    </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="English Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">English Class</h3>
+                    <p>Basic to advanced Spoken English, Grammar, aur Communication skills sikhaye jaate hain.</p>
                 </div>
             </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80" alt="Math Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Math Class</h3>
+                    <p>Ganit ke basic concepts aur problem solving techniques ko aasan tarike se samjhaya jata hai.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Science Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Science Class</h3>
+                    <p>Physics, Chemistry, aur Biology ke interactive lessons aur practical learning concepts.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80" alt="AI Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">AI Class</h3>
+                    <p>Artificial Intelligence ke basics, tools, aur bhavishya me iske upyog ki interactive shiksha.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Design Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Graphic Design</h3>
+                    <p>Creative designs, editing tools, Canva, Photoshop aur digital art sikhne ka mauka.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Computer Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Computer Class</h3>
+                    <p>Basic Computer fundamentals, MS Office, Internet skills aur typing ki practical training.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Registration Modal (Popup Form) -->
-    <div id="registrationModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="form-header">
-                <img src="images/logo.png" alt="AD Foundation Logo" class="form-logo">
-                <h2>AD Foundation - Free Registration Form</h2>
-                <p>Niche di gayi jankari bhrein aur free classes mein admission paayein</p>
-            </div>
-            <form id="studentRegistrationForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label for="fullName"><i class="fas fa-user"></i> Poora Naam (Full Name) *</label>
-                    <input type="text" id="fullName" required placeholder="Apna poora naam likhein">
-                </div>
-                <div class="form-group">
-                    <label for="phone"><i class="fas fa-phone"></i> Mobile / WhatsApp Number *</label>
-                    <input type="tel" id="phone" required placeholder="10 digit WhatsApp number">
-                </div>
-                <div class="form-group">
-                    <label for="courseSelect"><i class="fas fa-book-reader"></i> Class Select Karein *</label>
-                    <select id="courseSelect" required>
-                        <option value="">-- Class Chuniye --</option>
-                        <option value="English Class">English Class</option>
-                        <option value="Math Class">Math Class</option>
-                        <option value="Science Class">Science Class</option>
-                        <option value="AI Class">AI (Artificial Intelligence) Class</option>
-                        <option value="Graphic Design Class">Graphic Design Class</option>
-                        <option value="Computer Class">Computer Class</option>
-                        <option value="All Classes">All Free Classes</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="city"><i class="fas fa-map-marker-alt"></i> Shehar / City *</label>
-                    <input type="text" id="city" required placeholder="Apne shehar ka naam likhein">
-                </div>
-                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Registration</button>
-            </form>
-            <div id="successMessage" class="success-message" style="display:none;">
-                <i class="fas fa-check-circle"></i>
-                <h3>Registration Successful!</h3>
-                <p>Aapka registration ho gaya hai. Hamari team jald hi aapko WhatsApp par sampark karegi.</p>
-                <button class="btn btn-whatsapp-hero" onclick="redirectToWhatsapp()"><i class="fab fa-whatsapp"></i> WhatsApp Group Join Karein</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp Widget -->
-    <a href="https://wa.me/919876543210?text=Hello%20AD%20Foundation,%20mujhe%20free%20classes%20ke%20bare%20mein%20jaankari%20chahiye." target="_blank" class="whatsapp-float" title="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="wa-tooltip">Help &amp; Admissions</span>
-    </a>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <div class="logo-container">
-                    <img src="images/logo.png" alt="AD Foundation Logo" class="site-logo">
-                    <div class="brand-name">
-                        <h2>AD FOUNDATION</h2>
-                        <span>Free Education Initiative</span>
-                    </div>
-                </div>
-                <p style="margin-top: 15px;">Founder: Rakhi Luthra<br>Har bachhe ko digital skill se sashakt banana hamara lakshya hai.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Free Classes</h4>
-                <ul>
-                    <li><a href="#courses">English Class</a></li>
-                    <li><a href="#courses">Math Class</a></li>
-                    <li><a href="#courses">Science Class</a></li>
-                    <li><a href="#courses">AI Class</a></li>
-                    <li><a href="#courses">Graphic Design</a></li>
-                    <li><a href="#courses">Computer Class</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-envelope"></i> info@adfoundation.org</p>
-                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 AD Foundation. All Rights Reserved. | Dedicated to Free Social Education</p>
-        </div>
+    <footer id="contact">
+        <p>&copy; 2026 AD Foundation. All Rights Reserved.</p>
+        <p>Empowering Students through Free Education</p>
     </footer>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
