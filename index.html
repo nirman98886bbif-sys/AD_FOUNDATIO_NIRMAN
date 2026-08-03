@@ -3,749 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AD Foundation - Free Education & Empowerment</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --primary-light: #3b82f6;
-            --secondary: #ec4899;
-            --accent: #f59e0b;
-            --bg-light: #f8fafc;
-            --text-dark: #1f2937;
-            --text-muted: #6b7280;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header / Navbar */
-        header {
-            background: #ffffff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 25px;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-badge {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            font-weight: 800;
-            font-size: 1.4rem;
-            padding: 8px 14px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.25);
-        }
-
-        .logo-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -0.5px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-light);
-        }
-
-        .btn-join {
-            background: linear-gradient(135deg, var(--secondary), #db2777);
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            border: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 14px rgba(236, 72, 153, 0.35);
-            transition: all 0.3s ease;
-        }
-
-        .btn-join:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(236, 72, 153, 0.5);
-        }
-
-        /* Hero Banner */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #312e81 100%);
-            color: white;
-            text-align: center;
-            padding: 90px 20px 100px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--bg-light);
-            transform: skewY(-2deg);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin: 0 auto 30px;
-            color: #cbd5e1;
-        }
-
-        .hero-btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(8px);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        /* Container Section */
-        .container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-subtitle {
-            color: var(--secondary);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            font-size: 2.3rem;
-            color: var(--primary);
-            font-weight: 800;
-        }
-
-        /* Founder Section */
-        .founder-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        @media (max-width: 768px) {
-            .founder-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px;
-            }
-        }
-
-        .founder-img-wrapper {
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .founder-img {
-            width: 240px;
-            height: 280px;
-            border-radius: 16px;
-            object-fit: cover;
-            box-shadow: 0 12px 25px rgba(30, 58, 138, 0.15);
-        }
-
-        .founder-info h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .founder-role {
-            display: inline-block;
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            background: #fce7f3;
-            padding: 4px 12px;
-            border-radius: 20px;
-        }
-
-        .founder-info p {
-            color: #4b5563;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        /* Courses Grid */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .course-card {
-            background: white;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid #f1f5f9;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .course-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .course-banner {
-            height: 160px;
-            background-color: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .course-banner svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .course-body {
-            padding: 22px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .course-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: #2563eb;
-            background: #eff6ff;
-            padding: 4px 10px;
-            border-radius: 12px;
-            display: inline-block;
-            margin-bottom: 10px;
-            width: fit-content;
-        }
-
-        .course-title {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
-
-        .course-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .course-btn {
-            background: var(--primary);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .course-btn:hover {
-            background: var(--primary-light);
-        }
-
-        /* --- REGISTRATION MODAL --- */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(4px);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 35px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 480px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        @keyframes modalSlide {
-            from { opacity: 0; transform: translateY(-30px) scale(0.95); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .close-btn {
-            position: absolute;
-            right: 20px;
-            top: 18px;
-            font-size: 26px;
-            font-weight: bold;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .close-btn:hover { color: #0f172a; }
-
-        .form-group {
-            margin-bottom: 18px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 10px;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.2s;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #16a34a, #15803d);
-            color: white;
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-top: 10px;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
-            transition: 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: linear-gradient(135deg, #15803d, #166534);
-            transform: translateY(-1px);
-        }
-
-        /* --- FLOATING WHATSAPP BUTTON --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-        }
-
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 80px;
-            border-top: 1px solid #1e293b;
-        }
-
-        footer p {
-            font-size: 0.95rem;
-        }
-    </style>
+    <title>AD Foundation - Free Education for All</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header Navbar -->
-    <header>
-        <div class="nav-container">
-            <div class="logo-area">
-                <div class="logo-badge">AD</div>
-                <div class="logo-title">AD Foundation</div>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="AD Foundation Logo" class="site-logo">
+            <div class="brand-name">
+                <h2>AD FOUNDATION</h2>
+                <span>Educate • Empower • Elevate</span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#founder">Founder</a></li>
-                    <li><a href="#courses">Classes</a></li>
-                    <li><button class="btn-join" onclick="openForm()">Join Now 🚀</button></li>
-                </ul>
-            </nav>
         </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#courses">Free Classes</a>
+            <a href="#founder">Founder</a>
+            <a href="#contact">Contact</a>
+            <button class="join-header-btn" onclick="openModal()">Join Now</button>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Educate. Empower. Elevate.</h1>
-        <p>AD Foundation ke saath judiye aur muft gunvattapoorn shiksha paayein. Apne future ko bright banaayein!</p>
-        <div class="hero-btn-group">
-            <button class="btn-join" onclick="openForm()" style="font-size: 1.1rem; padding: 14px 32px;">✨ Register For Free Class</button>
-            <a href="#courses" class="btn-secondary">Explore Courses</a>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <span class="badge">100% Free NGO Education</span>
+            <h1>Har Bachhe Ka Haq: <span>Muft Aur Behtar Shiksha</span></h1>
+            <p>AD Foundation ke saath judein aur apni pasandida classes bilkul free mein seekhein. English, Math, Science, AI, Computer aur Graphic Design ke free courses!</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openModal()"><i class="fas fa-user-plus"></i> Join Now (Registration)</button>
+                <a href="https://wa.me/919876543210?text=Hello%20AD%20Foundation,%20mujhe%20free%20classes%20ke%20bare%20mein%20jaankari%20chahiye." target="_blank" class="btn btn-whatsapp-hero"><i class="fab fa-whatsapp"></i> WhatsApp Direct Chat</a>
+            </div>
+        </div>
+        <div class="hero-badge-card">
+            <img src="images/logo.png" alt="AD Foundation" class="hero-center-logo">
+        </div>
+    </section>
+
+    <!-- Stats Counter Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <i class="fas fa-user-graduate"></i>
+            <h3>1000+</h3>
+            <p>Students Educated</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>6+</h3>
+            <p>Free Skill Courses</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-certificate"></i>
+            <h3>100%</h3>
+            <p>Free Certification</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-heart"></i>
+            <h3>Non-Profit</h3>
+            <p>Social Initiative</p>
         </div>
     </section>
 
     <!-- Founder Section -->
-    <section id="founder" class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Leadership</span>
+    <section id="founder" class="founder-section">
+        <div class="container">
             <h2 class="section-title">Meet Our Founder</h2>
-        </div>
-        <div class="founder-card">
-            <div class="founder-img-wrapper">
-                <!-- High Quality SVG Illustration for Founder Image -->
-                <svg class="founder-img" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#fbcfe8"/>
-                            <stop offset="100%" stop-color="#bae6fd"/>
-                        </linearGradient>
-                        <linearGradient id="suitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="#1e3a8a"/>
-                            <stop offset="100%" stop-color="#0f172a"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="240" height="280" fill="url(#bgGrad)" rx="16"/>
-                    <!-- Background Circle Aura -->
-                    <circle cx="120" cy="110" r="75" fill="#ffffff" opacity="0.6"/>
-                    <!-- Body / Suit -->
-                    <path d="M 40,280 Q 40,200 120,200 Q 200,200 200,280 Z" fill="url(#suitGrad)"/>
-                    <!-- Collar / Inner Top -->
-                    <path d="M 95,200 L 120,240 L 145,200 Z" fill="#ffffff"/>
-                    <path d="M 110,200 L 120,230 L 130,200 Z" fill="#ec4899"/>
-                    <!-- Neck -->
-                    <rect x="105" y="150" width="30" height="30" fill="#f87171" rx="5"/>
-                    <!-- Head / Face -->
-                    <ellipse cx="120" cy="120" rx="42" ry="48" fill="#fca5a5"/>
-                    <!-- Hair -->
-                    <path d="M 75,125 Q 70,70 120,65 Q 170,70 165,125 Q 175,160 160,175 Q 150,130 120,130 Q 90,130 80,175 Q 65,160 75,125 Z" fill="#1e1b4b"/>
-                    <!-- Smile & Features -->
-                    <path d="M 108,135 Q 120,145 132,135" fill="none" stroke="#b91c1c" stroke-width="3" stroke-linecap="round"/>
-                    <!-- Eyes -->
-                    <circle cx="106" cy="115" r="4" fill="#1e1b4b"/>
-                    <circle cx="134" cy="115" r="4" fill="#1e1b4b"/>
-                    <!-- Glasses -->
-                    <rect x="96" y="107" width="20" height="15" rx="4" fill="none" stroke="#475569" stroke-width="2.5"/>
-                    <rect x="124" y="107" width="20" height="15" rx="4" fill="none" stroke="#475569" stroke-width="2.5"/>
-                    <line x1="116" y1="114" x2="124" y2="114" stroke="#475569" stroke-width="2.5"/>
-                </svg>
-            </div>
-            <div class="founder-info">
-                <h3>Rakhi Luthra</h3>
-                <span class="founder-role">Founder & Director, AD Foundation</span>
-                <p>"Hamara uddeshya har bachhe ko aatm-nirbhar aur prabhavshali banana hai. AD Foundation ke madhyam se hum har vidyarthi ko free, high-quality skill-based education pradan karte hain taaki woh apne sapno ko poora kar sakein."</p>
-                <p style="font-size: 0.95rem; color: #64748b;">🌟 Dedicated to empowering youth through digital literacy, AI, communication, and creative skills.</p>
+            <div class="founder-card">
+                <div class="founder-img-box">
+                    <img src="images/founder.png" alt="Rakhi Luthra - Founder">
+                </div>
+                <div class="founder-info">
+                    <span class="founder-tag">Visionary & Founder</span>
+                    <h2>Rakhi Luthra</h2>
+                    <p class="founder-quote">"Shiksha har bachhe aur yuva ka buniyadi haq hai. AD Foundation ka maqsad har zarooratmand tak modern aur digital skills muft mein pahunchana hai."</p>
+                    <p class="founder-bio">Rakhi Luthra ji ke netritva mein AD Foundation samaj ke har varg ko muft aur uchha star ki shiksha pradan kar raha hai. Unka sapna hai ki har student English, AI, Computer aur Graphic Design jaise modern subjects ko seekh kar aatmanirbhar bane.</p>
+                    <button class="btn btn-primary" onclick="openModal()"><i class="fas fa-graduation-cap"></i> Join Rakhi Luthra's Mission</button>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="container">
-        <div class="section-header">
-            <span class="section-subtitle">Learning Programs</span>
-            <h2 class="section-title">Explore Our Free Classes</h2>
-        </div>
-
-        <div class="courses-grid">
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <h2 class="section-title">Hamari Free Classes (Courses Offered)</h2>
+            <p class="section-subtitle">Aap in sabhi courses ko bilkul muft mein join kar sakte hain</p>
             
-            <!-- Course 1: English -->
-            <div class="course-card">
-                <div class="course-banner">
-                    <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="160" fill="#eff6ff"/>
-                        <circle cx="150" cy="80" r="50" fill="#3b82f6" opacity="0.15"/>
-                        <text x="150" y="90" font-size="42" font-weight="bold" fill="#1d4ed8" text-anchor="middle">English</text>
-                        <path d="M 100,120 Q 150,135 200,120" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <div class="course-body">
-                    <div>
-                        <span class="course-tag">Communication</span>
-                        <h3 class="course-title">Spoken English & Grammar</h3>
-                        <p class="course-desc">Fluent Spoken English, Public Speaking aur daily conversation skills sikhein.</p>
+            <div class="courses-grid">
+                <!-- English Class -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="images/english.svg" alt="English Class">
+                        <span class="free-badge">FREE</span>
                     </div>
-                    <button class="course-btn" onclick="openForm('Spoken English')">Join Free Class</button>
+                    <div class="course-body">
+                        <h3>English Class</h3>
+                        <p>Spoken English, Grammar, Vocabulary aur Confidence Building bilkul aasan tarike se seekhein.</p>
+                        <button class="btn btn-outline" onclick="openModalWithCourse('English Class')">Join English Class</button>
+                    </div>
+                </div>
+
+                <!-- Math Class -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="images/math.svg" alt="Math Class">
+                        <span class="free-badge">FREE</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Mathematics Class</h3>
+                        <p>Maths ke mushkil formulas aur problem solving ko aasan aur fun tricks ke saath samjhein.</p>
+                        <button class="btn btn-outline" onclick="openModalWithCourse('Math Class')">Join Math Class</button>
+                    </div>
+                </div>
+
+                <!-- Science Class -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="images/science.svg" alt="Science Class">
+                        <span class="free-badge">FREE</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Science Class</h3>
+                        <p>Physics, Chemistry aur Biology ke basic concepts ko practical aur visual examples ke saath seekhein.</p>
+                        <button class="btn btn-outline" onclick="openModalWithCourse('Science Class')">Join Science Class</button>
+                    </div>
+                </div>
+
+                <!-- AI Class -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="images/ai.svg" alt="AI Class">
+                        <span class="free-badge">FREE</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Artificial Intelligence (AI) Class</h3>
+                        <p>Future ready banein! AI Tools, ChatGPT, Prompting aur Automation ka sahi istemal seekhein.</p>
+                        <button class="btn btn-outline" onclick="openModalWithCourse('AI Class')">Join AI Class</button>
+                    </div>
+                </div>
+
+                <!-- Graphic Design Class -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="images/graphic.svg" alt="Graphic Design Class">
+                        <span class="free-badge">FREE</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Graphic Design Class</h3>
+                        <p>Canva aur Photo Editing seekhein. Social Media Posters, Logos aur Banners banana seekhein.</p>
+                        <button class="btn btn-outline" onclick="openModalWithCourse('Graphic Design Class')">Join Graphic Class</button>
+                    </div>
+                </div>
+
+                <!-- Computer Class -->
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="images/computer.svg" alt="Computer Class">
+                        <span class="free-badge">FREE</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Basic Computer Class</h3>
+                        <p>Computer Fundamentals, MS Office (Word, Excel, PPT), Internet aur Typing Speed badhayein.</p>
+                        <button class="btn btn-outline" onclick="openModalWithCourse('Computer Class')">Join Computer Class</button>
+                    </div>
                 </div>
             </div>
-
-            <!-- Course 2: Mathematics -->
-            <div class="course-card">
-                <div class="course-banner">
-                    <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="160" fill="#f0fdf4"/>
-                        <circle cx="150" cy="80" r="50" fill="#22c55e" opacity="0.15"/>
-                        <text x="150" y="95" font-size="45" font-weight="bold" fill="#15803d" text-anchor="middle">Math 123</text>
-                    </svg>
-                </div>
-                <div class="course-body">
-                    <div>
-                        <span class="course-tag" style="color: #16a34a; background: #f0fdf4;">Academics</span>
-                        <h3 class="course-title">Basic & Advanced Math</h3>
-                        <p class="course-desc">Conceptual Mathematics, Mental Math & Problem Solving Techniques.</p>
-                    </div>
-                    <button class="course-btn" onclick="openForm('Math')">Join Free Class</button>
-                </div>
-            </div>
-
-            <!-- Course 3: Science -->
-            <div class="course-card">
-                <div class="course-banner">
-                    <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="160" fill="#fef3c7"/>
-                        <circle cx="150" cy="80" r="50" fill="#f59e0b" opacity="0.2"/>
-                        <text x="150" y="90" font-size="40" font-weight="bold" fill="#b45309" text-anchor="middle">Science 🧪</text>
-                    </svg>
-                </div>
-                <div class="course-body">
-                    <div>
-                        <span class="course-tag" style="color: #d97706; background: #fef3c7;">Academics</span>
-                        <h3 class="course-title">Science Explorer</h3>
-                        <p class="course-desc">Physics, Chemistry, and Biology fundamentals with practical insights.</p>
-                    </div>
-                    <button class="course-btn" onclick="openForm('Science')">Join Free Class</button>
-                </div>
-            </div>
-
-            <!-- Course 4: Artificial Intelligence -->
-            <div class="course-card">
-                <div class="course-banner">
-                    <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="160" fill="#fae8ff"/>
-                        <circle cx="150" cy="80" r="50" fill="#c084fc" opacity="0.25"/>
-                        <text x="150" y="90" font-size="40" font-weight="bold" fill="#6b21a8" text-anchor="middle">AI & Tech 🤖</text>
-                    </svg>
-                </div>
-                <div class="course-body">
-                    <div>
-                        <span class="course-tag" style="color: #9333ea; background: #fae8ff;">Future Skills</span>
-                        <h3 class="course-title">AI & Smart Tools</h3>
-                        <p class="course-desc">ChatGPT, AI Tools & Modern Technology ki madad se smart bano.</p>
-                    </div>
-                    <button class="course-btn" onclick="openForm('AI & Tech')">Join Free Class</button>
-                </div>
-            </div>
-
-            <!-- Course 5: Graphic Design -->
-            <div class="course-card">
-                <div class="course-banner">
-                    <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="160" fill="#fce7f3"/>
-                        <circle cx="150" cy="80" r="50" fill="#f43f5e" opacity="0.2"/>
-                        <text x="150" y="90" font-size="38" font-weight="bold" fill="#be123c" text-anchor="middle">Design 🎨</text>
-                    </svg>
-                </div>
-                <div class="course-body">
-                    <div>
-                        <span class="course-tag" style="color: #e11d48; background: #ffe4e6;">Creative</span>
-                        <h3 class="course-title">Graphic Design & Canva</h3>
-                        <p class="course-desc">Posters, Social Media Banners & Video Editing basics sikhein.</p>
-                    </div>
-                    <button class="course-btn" onclick="openForm('Graphic Design')">Join Free Class</button>
-                </div>
-            </div>
-
-            <!-- Course 6: Computer Basics -->
-            <div class="course-card">
-                <div class="course-banner">
-                    <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="300" height="160" fill="#e0f2fe"/>
-                        <circle cx="150" cy="80" r="50" fill="#0284c7" opacity="0.2"/>
-                        <text x="150" y="90" font-size="38" font-weight="bold" fill="#0369a1" text-anchor="middle">Computer 💻</text>
-                    </svg>
-                </div>
-                <div class="course-body">
-                    <div>
-                        <span class="course-tag" style="color: #0284c7; background: #e0f2fe;">Digital Skills</span>
-                        <h3 class="course-title">Computer Basics & MS Office</h3>
-                        <p class="course-desc">MS Word, Excel, PowerPoint & Internet Browsing complete course.</p>
-                    </div>
-                    <button class="course-btn" onclick="openForm('Computer Basics')">Join Free Class</button>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/919876543210?text=Hello%20AD%20Foundation,%20mujhe%20free%20classes%20me%20join%20karna%20hai." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-        <svg width="34" height="34" fill="white" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-0.999 3.648 3.742-.981z"/>
-        </svg>
-    </a>
-
-    <!-- REGISTRATION POPUP MODAL -->
-    <div id="registerModal" class="modal">
+    <!-- Registration Modal (Popup Form) -->
+    <div id="registrationModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeForm()">&times;</span>
-            <h2 style="color: var(--primary); text-align: center; margin-bottom: 8px;">Free Registration</h2>
-            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 22px;">Fill out the form to secure your free seat!</p>
-            
-            <form onsubmit="submitRegistration(event)">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="form-header">
+                <img src="images/logo.png" alt="AD Foundation Logo" class="form-logo">
+                <h2>AD Foundation - Free Registration Form</h2>
+                <p>Niche di gayi jankari bhrein aur free classes mein admission paayein</p>
+            </div>
+            <form id="studentRegistrationForm" onsubmit="handleFormSubmit(event)">
                 <div class="form-group">
-                    <label>Full Name (पूरा नाम):</label>
-                    <input type="text" placeholder="Enter your full name" required>
+                    <label for="fullName"><i class="fas fa-user"></i> Poora Naam (Full Name) *</label>
+                    <input type="text" id="fullName" required placeholder="Apna poora naam likhein">
                 </div>
                 <div class="form-group">
-                    <label>Mobile / WhatsApp Number:</label>
-                    <input type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                    <label for="phone"><i class="fas fa-phone"></i> Mobile / WhatsApp Number *</label>
+                    <input type="tel" id="phone" required placeholder="10 digit WhatsApp number">
                 </div>
                 <div class="form-group">
-                    <label>Select Course (कोर्स चुनें):</label>
+                    <label for="courseSelect"><i class="fas fa-book-reader"></i> Class Select Karein *</label>
                     <select id="courseSelect" required>
-                        <option value="Spoken English">Spoken English & Grammar</option>
-                        <option value="Math">Basic & Advanced Math</option>
-                        <option value="Science">Science Explorer</option>
-                        <option value="AI & Tech">AI & Smart Tools</option>
-                        <option value="Graphic Design">Graphic Design & Canva</option>
-                        <option value="Computer Basics">Computer Basics & MS Office</option>
+                        <option value="">-- Class Chuniye --</option>
+                        <option value="English Class">English Class</option>
+                        <option value="Math Class">Math Class</option>
+                        <option value="Science Class">Science Class</option>
+                        <option value="AI Class">AI (Artificial Intelligence) Class</option>
+                        <option value="Graphic Design Class">Graphic Design Class</option>
+                        <option value="Computer Class">Computer Class</option>
+                        <option value="All Classes">All Free Classes</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn">Complete Registration 🎉</button>
+                <div class="form-group">
+                    <label for="city"><i class="fas fa-map-marker-alt"></i> Shehar / City *</label>
+                    <input type="text" id="city" required placeholder="Apne shehar ka naam likhein">
+                </div>
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Registration</button>
             </form>
+            <div id="successMessage" class="success-message" style="display:none;">
+                <i class="fas fa-check-circle"></i>
+                <h3>Registration Successful!</h3>
+                <p>Aapka registration ho gaya hai. Hamari team jald hi aapko WhatsApp par sampark karegi.</p>
+                <button class="btn btn-whatsapp-hero" onclick="redirectToWhatsapp()"><i class="fab fa-whatsapp"></i> WhatsApp Group Join Karein</button>
+            </div>
         </div>
     </div>
 
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/919876543210?text=Hello%20AD%20Foundation,%20mujhe%20free%20classes%20ke%20bare%20mein%20jaankari%20chahiye." target="_blank" class="whatsapp-float" title="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="wa-tooltip">Help &amp; Admissions</span>
+    </a>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 AD Foundation. All Rights Reserved. Empowering Education for Everyone.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="AD Foundation Logo" class="site-logo">
+                    <div class="brand-name">
+                        <h2>AD FOUNDATION</h2>
+                        <span>Free Education Initiative</span>
+                    </div>
+                </div>
+                <p style="margin-top: 15px;">Founder: Rakhi Luthra<br>Har bachhe ko digital skill se sashakt banana hamara lakshya hai.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Free Classes</h4>
+                <ul>
+                    <li><a href="#courses">English Class</a></li>
+                    <li><a href="#courses">Math Class</a></li>
+                    <li><a href="#courses">Science Class</a></li>
+                    <li><a href="#courses">AI Class</a></li>
+                    <li><a href="#courses">Graphic Design</a></li>
+                    <li><a href="#courses">Computer Class</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@adfoundation.org</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fab fa-whatsapp"></i> +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AD Foundation. All Rights Reserved. | Dedicated to Free Social Education</p>
+        </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR FORM POPUP -->
-    <script>
-        function openForm(courseName) {
-            document.getElementById('registerModal').style.display = 'flex';
-            if(courseName) {
-                document.getElementById('courseSelect').value = courseName;
-            }
-        }
-
-        function closeForm() {
-            document.getElementById('registerModal').style.display = 'none';
-        }
-
-        function submitRegistration(event) {
-            event.preventDefault();
-            alert("🎉 Registration Successful!
-
-AD Foundation me register karne ke liye dhanyawad. Hum aapse WhatsApp par jald hi sampark karenge.");
-            closeForm();
-        }
-
-        // Close modal if user clicks backdrop
-        window.onclick = function(event) {
-            var modal = document.getElementById('registerModal');
-            if (event.target == modal) {
-                closeForm();
-            }
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

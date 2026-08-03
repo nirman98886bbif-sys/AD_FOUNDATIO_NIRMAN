@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <defs>
+    <linearGradient id="math" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="300" fill="url(#math)"/>
+  <text x="250" y="110" font-family="'Segoe UI', Arial, sans-serif" font-weight="bold" font-size="60" fill="#ffffff" text-anchor="middle">π  +  √  ÷  %</text>
+  <text x="250" y="180" font-family="'Segoe UI', Arial, sans-serif" font-weight="600" font-size="28" fill="#e0f2fe" text-anchor="middle">Mathematics &amp; Logic</text>
+  <text x="250" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#bae6fd" text-anchor="middle">Basic Arithmetic • Algebra • Geometry</text>
+</svg>

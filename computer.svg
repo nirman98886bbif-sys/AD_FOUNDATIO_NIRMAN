@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <defs>
+    <linearGradient id="comp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="300" fill="url(#comp)"/>
+  <text x="250" y="110" font-family="'Segoe UI', Arial, sans-serif" font-weight="bold" font-size="60" fill="#ffffff" text-anchor="middle">💻 BASIC IT</text>
+  <text x="250" y="180" font-family="'Segoe UI', Arial, sans-serif" font-weight="600" font-size="28" fill="#ecfeff" text-anchor="middle">Computer Fundamentals</text>
+  <text x="250" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#cffafe" text-anchor="middle">MS Office • Internet • Typing</text>
+</svg>

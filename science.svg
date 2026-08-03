@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <defs>
+    <linearGradient id="sci" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="300" fill="url(#sci)"/>
+  <circle cx="250" cy="100" r="45" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <ellipse cx="250" cy="100" rx="55" ry="20" fill="none" stroke="#a7f3d0" stroke-width="3" transform="rotate(30 250 100)"/>
+  <ellipse cx="250" cy="100" rx="55" ry="20" fill="none" stroke="#a7f3d0" stroke-width="3" transform="rotate(-30 250 100)"/>
+  <text x="250" y="190" font-family="'Segoe UI', Arial, sans-serif" font-weight="600" font-size="28" fill="#ecfdf5" text-anchor="middle">General Science</text>
+  <text x="250" y="225" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#d1fae5" text-anchor="middle">Physics • Chemistry • Biology</text>
+</svg>
