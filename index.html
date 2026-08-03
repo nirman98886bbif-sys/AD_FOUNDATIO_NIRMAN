@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD Foundation - Free Education, Brighter Tomorrow</title>
+    <style>
+        :root {
+            --primary: #1A237E;
+            --secondary: #E91E63;
+            --accent: #FF9800;
+            --bg-light: #F4F6F9;
+            --text-dark: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-img {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #3F51B5);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            background: var(--secondary);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .founder-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .founder-img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .founder-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .founder-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .founder-info .role {
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-badge {
+            background: #E8F5E9;
+            color: #2E7D32;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <img src="logo.png" alt="AD Foundation Logo" class="logo-img">
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#founder">Founder</a></li>
+                    <li><a href="#courses">Free Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>AD FOUNDATION</h1>
+        <p>Educate • Empower • Elevate</p>
+        <span class="tagline">FREE EDUCATION, BRIGHTER TOMORROW</span>
+    </section>
+
+    <section id="founder" class="container">
+        <h2 class="section-title">Meet Our Founder</h2>
+        <div class="founder-card">
+            <img src="founder.png" alt="Rakhi Luthra - Founder" class="founder-img">
+            <div class="founder-info">
+                <h3>Rakhi Luthra</h3>
+                <span class="role">Founder, AD Foundation</span>
+                <p>Aapke maargdarshan aur prayaas dwara AD Foundation har bachhe ko muft aur gunvattapoorn shiksha dene ke liye samarpit hai. Humara lakshya har student ko unke sapne poore karne aur ek behtar bhavishya banane me madad karna hai.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="container">
+        <h2 class="section-title">Our Free Classes</h2>
+        <div class="courses-grid">
+            
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="English Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">English Class</h3>
+                    <p>Basic to advanced Spoken English, Grammar, aur Communication skills sikhaye jaate hain.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80" alt="Math Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Math Class</h3>
+                    <p>Ganit ke basic concepts aur problem solving techniques ko aasan tarike se samjhaya jata hai.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Science Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Science Class</h3>
+                    <p>Physics, Chemistry, aur Biology ke interactive lessons aur practical learning concepts.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80" alt="AI Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">AI Class</h3>
+                    <p>Artificial Intelligence ke basics, tools, aur bhavishya me iske upyog ki interactive shiksha.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Graphic Design Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Graphic Design</h3>
+                    <p>Creative designs, editing tools, Canva, Photoshop aur digital art sikhne ka mauka.</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Computer Class" class="course-img">
+                <div class="course-content">
+                    <span class="course-badge">Free Course</span>
+                    <h3 class="course-title">Computer Class</h3>
+                    <p>Basic Computer fundamentals, MS Office, Internet skills aur typing ki practical training.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2026 AD Foundation. All Rights Reserved.</p>
+        <p>Empowering Students through Free Education</p>
+    </footer>
+
+</body>
+</html>
